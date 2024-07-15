@@ -1,9 +1,17 @@
-#include "StringCalculator.h"
-#include <sstream>
-#include <regex>
-#include <stdexcept>
-
-bool StringCalculator::isEmpty(const std::string& text)
+int StringCalculator::validateNumber(const std::string& element) 
 {
-    return text.empty() || text == "0";
+    try 
+    {
+        int value = std::stoi(element);
+        if (value < 0) 
+        {
+            throw std::runtime_error("Negative numbers not allowed");
+        }
+        return (value <= 1000);
+    } 
+    catch (const std::invalid_argument&) 
+    {
+        return false;
+    }
 }
+

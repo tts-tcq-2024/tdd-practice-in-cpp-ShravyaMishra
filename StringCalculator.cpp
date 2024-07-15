@@ -1,20 +1,9 @@
 #include "StringCalculator.h"
 #include <sstream>
+#include <regex>
+#include <stdexcept>
 
-int StringCalculator::add(const std::string& numbers) {
-    if (numbers.empty()) {
-        return 0;
-    }
-
-    std::istringstream stream(numbers);
-    int sum = 0, num;
-
-    while (stream >> num) {
-        sum += num;
-        if (stream.peek() == ',') {
-            stream.ignore();
-        }
-    }
-
-    return sum;
+bool StringCalculator::isEmpty(const std::string& text)
+{
+    return text.empty() || text == "0";
 }

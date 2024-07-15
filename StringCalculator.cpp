@@ -45,4 +45,14 @@ int StringCalculator::sum(const std::string& text)
     return total;
 }
 
+int StringCalculator::add(const std::string& text)
+{
+    if (isEmpty(text))
+    {
+        return 0;
+    }
+    return sum(text);
+}
+
+
 

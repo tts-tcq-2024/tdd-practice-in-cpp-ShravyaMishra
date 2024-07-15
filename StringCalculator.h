@@ -15,3 +15,4 @@ private:
 #endif // STRINGCALCULATOR_H
 
 
+
